@@ -1,0 +1,113 @@
+{
+  "info": {
+    "name": "Booking System - API",
+    "description": "Postman collection for the Booking System API (admin & user endpoints).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "booking-system-collection"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/health"
+      },
+      "response": []
+    },
+    {
+      "name": "Admin - Create Slot",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"doctor_name\": \"Dr. Example\",\n  \"specialization\": \"General\",\n  \"start_time\": \"2026-01-01T10:00:00Z\",\n  \"duration_minutes\": 30,\n  \"total_capacity\": 5\n}"
+        },
+        "url": "{{base_url}}/api/admin/slots"
+      },
+      "response": []
+    },
+    {
+      "name": "Admin - List All Slots",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/api/admin/slots"
+      },
+      "response": []
+    },
+    {
+      "name": "User - List Available Slots",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/api/slots"
+      },
+      "response": []
+    },
+    {
+      "name": "Booking - Create",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"slot_id\": \"<slot-id>\",\n  \"user_id\": \"user123\",\n  \"num_seats\": 1\n}"
+        },
+        "url": "{{base_url}}/api/bookings"
+      },
+      "response": []
+    },
+    {
+      "name": "Booking - Get by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/api/bookings/<booking-id>"
+      },
+      "response": []
+    },
+    {
+      "name": "Booking - Cancel",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": { "mode": "raw", "raw": "" },
+        "url": "{{base_url}}/api/bookings/<booking-id>/cancel"
+      },
+      "response": []
+    },
+    {
+      "name": "Admin - Expire Pending (manual)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": "{{base_url}}/api/admin/expire-pending"
+      },
+      "response": []
+    },
+    {
+      "name": "Admin - Expire Pending (GET status) [debug]",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/api/admin/expire-pending/status"
+      },
+      "response": []
+    }
+  ]
+}

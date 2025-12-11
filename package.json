@@ -1,0 +1,31 @@
+{
+  "name": "booking-system",
+  "version": "1.0.0",
+  "description": "Doctor appointment booking system with concurrency-safe seat allocation (Node.js + Express + PostgreSQL)",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "test:repos": "node scripts/testRepos.js",
+    "test": "echo \"No tests implemented yet\" && exit 0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "pg": "^8.11.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "postgres",
+    "backend",
+    "booking-system",
+    "concurrency"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
