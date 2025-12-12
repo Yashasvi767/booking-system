@@ -41,7 +41,7 @@ npm install
 
 ### 3. Configure Environment Variables
 
-Create a `.env` file in the project root (this file should **never be committed**):
+Create a `.env` file in the project root :
 
 ```env
 PORT=3000
@@ -227,4 +227,4 @@ It includes architecture diagrams, ER diagrams, booking flows, concurrency guara
 ---
 
 ## Author
-<Your Name>
+Yashasvi767
